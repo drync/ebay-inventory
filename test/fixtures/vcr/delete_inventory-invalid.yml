@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sandbox.ebay.com/selling/inventory/v1/inventory/delta/delete
+    body:
+      encoding: UTF-8
+      string: "<?xml version='1.0' encoding='UTF-8'?><DeleteInventoryRequest><SKU></SKU><Locations><Location><LocationID>test</LocationID></Location></Locations></DeleteInventoryRequest>"
+    headers:
+      Authorization:
+      - TOKEN <AUTH_TOKEN>
+      Content-Type:
+      - application/xml
+      Accept-Encoding:
+      - gzip
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Length:
+      - '236'
+      Content-Encoding:
+      - gzip
+      Date:
+      - Thu, 12 May 2016 22:05:19 GMT
+      Nncoection:
+      - close
+      Rlogid:
+      - t6jkptufoi.%60hqb%60p2w0h6u4739%3Fvo%7B%3Dd6%60%281b74-154a700abca-0x4e3
+      Set-Cookie:
+      - ebay=%5Esbf%3D%23%5E;Domain=.ebay.com;Path=/
+      X-Ebay-C-Version:
+      - 1.0.0
+      X-Ebay-Request-Id:
+      - 154a700abc6.a09632d.9dba.ffffc85e!/selling/inventory/!10.9.99.45!r1esbngcos[]!inventory.v1!r1invsvcin-envaev5t5n1v114[]
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Type:
+      - application/xml
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAJWQQUsDMRCF/8qQu8ZCKVJmU4q2UKyXXdd73B3XYDrRTLa6
+        /npjXbCCPQhzeY/3mMeHi/edhz1FcYELNTm/UEDchNZxV6j6bn12qUCS5db6
+        wFSogUQtDF6Tp0Qb3hOnEIeS5CWwkMFl82zWy822LleovwSuYgxRDFZPIaZb
+        ErEdGa2rm3oO4j4Idr0keKB86Y2IYQL5HcymqH9VcBu4+08f7q3vaQ6oj5vf
+        e65CS2Y6Q/2jsKLMwaXhoA5+XnDsjVVvRdyja2zKzExJrz1JGvN/JUY3I9Cn
+        sH0C3f5TfYcBAAA=
+    http_version: 
+  recorded_at: Thu, 12 May 2016 22:05:19 GMT
+recorded_with: VCR 3.0.1

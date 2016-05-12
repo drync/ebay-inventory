@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sandbox.ebay.com/selling/inventory/v1/locations/delta/add
+    body:
+      encoding: UTF-8
+      string: "<?xml version='1.0' encoding='UTF-8'?><AddInventoryLocationRequest><Address1>1
+        Anywhere St</Address1><City>Somerville</City><Country>US</Country><Hours><Day><DayOfWeek>1</DayOfWeek><Interval><Open>08:00:00</Open><Close>19:00:00</Close></Interval></Day></Hours><Latitude>42.394598</Latitude><Longitude>-71.121187</Longitude><LocationID>test</LocationID><Name></Name><Phone>617-555-1111</Phone><PostalCode>02144</PostalCode><Region>MA</Region><UTCOffset>-05:00</UTCOffset></AddInventoryLocationRequest>"
+    headers:
+      Authorization:
+      - TOKEN <AUTH_TOKEN>
+      Content-Type:
+      - application/xml
+      Accept-Encoding:
+      - gzip
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Length:
+      - '298'
+      Content-Encoding:
+      - gzip
+      Date:
+      - Thu, 12 May 2016 19:29:17 GMT
+      Nncoection:
+      - close
+      Rlogid:
+      - t6jkptufoi.%60hqb%60p2w0h6u4739%3Fvo%7B%3Dd6%60%28cfgf-154a671cf65-0x834
+      Set-Cookie:
+      - ebay=%5Esbf%3D%23%5E;Domain=.ebay.com;Path=/
+      X-Ebay-C-Version:
+      - 1.0.0
+      X-Ebay-Request-Id:
+      - 154a671cf59.a0968eb.2ba5.ffffc8f4!/selling/inventory/!10.9.104.235!r1esbngcos[]!inventory.v1!r1invsvcin-envaev5t5n1v114[]
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Type:
+      - application/xml
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAK1RXWvCMBT9KyHvmta9SEkjsikIdQ+6jr1m7V0Na29cbmp1
+        v36pFnQwBoNBXs7JOed+ydmxqdkBHBmLKY/HEWeAhS0NVinPn5ajKWfkNZa6
+        tggpPwHxmZLzslzhAdBbd8psoX2wb4D2FgnCb/GulvNVlm8WUvRALpyzjpTc
+        7qzzayDSFSghHnUDCSPzCaxpybNXCM93AMhiFoqyeDKV4ptJZharvyWwZ123
+        QSXFrffS070tQU2kuAK5hbAP409ndOZDC7fc4Kw1kXkzl+HVBj5aID/of1IM
+        LPUjXKjVAwvrR0qOZFK+836fCNF13bi7G1tXiUkUxeJlnW2LHTR6ZLC/RAGc
+        BX2Cpk65dy1wcU3M8//LFL8e+QtgY3QJOgIAAA==
+    http_version: 
+  recorded_at: Thu, 12 May 2016 19:29:17 GMT
+recorded_with: VCR 3.0.1

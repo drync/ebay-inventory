@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sandbox.ebay.com/selling/inventory/v1/inventory/delta/add
+    body:
+      encoding: UTF-8
+      string: "<?xml version='1.0' encoding='UTF-8'?><AddInventoryRequest><SKU>123</SKU><Locations><Location><Availability>IN_STOCK</Availability><LocationID>test</LocationID><Quantity>5</Quantity></Location></Locations></AddInventoryRequest>"
+    headers:
+      Authorization:
+      - TOKEN <AUTH_TOKEN>
+      Content-Type:
+      - application/xml
+      Accept-Encoding:
+      - gzip
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '127'
+      Content-Encoding:
+      - gzip
+      Date:
+      - Thu, 12 May 2016 20:49:42 GMT
+      Rlogid:
+      - t6jkptufoi.%60hqb%60p2w0h6u4739%3Fvo%7B%3Dd6%60%281036-154a6bb7291-0x898
+      Set-Cookie:
+      - ebay=%5Esbf%3D%23%5E;Domain=.ebay.com;Path=/
+      X-Ebay-C-Version:
+      - 1.0.0
+      X-Ebay-Request-Id:
+      - 154a6bb728d.a09632d.9dba.ffffc881!/selling/inventory/!10.9.99.45!r1esbngcos[]!inventory.v1!r1invsvcin-envaev5t5n1v114[]
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Type:
+      - application/xml
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAALOxr8jNUShLLSrOzM+zVTLUM1BSSM1Lzk/JzEu3VQoNcdO1
+        UFIoLknMS0nMyc9LtVWqTC1WsrezcUxJ8cwrS80ryS+qDEotLsjPK04FiiZn
+        2wWHOju7Bgfb6IM4NsHeoXaGRsY2+iAGUAybNgDECvdihAAAAA==
+    http_version: 
+  recorded_at: Thu, 12 May 2016 20:49:43 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,5 @@
+require 'ebay/inventory/requests/abstract'
+require 'ebay/inventory/requests/add_inventory'
+require 'ebay/inventory/requests/add_inventory_location'
+require 'ebay/inventory/requests/delete_inventory'
+require 'ebay/inventory/requests/delete_inventory_location'
