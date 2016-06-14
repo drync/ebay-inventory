@@ -7,3 +7,4 @@ module Ebay
 end
 
 require "ebay/inventory/api"
+require "ebay/inbound_notifications/api"
