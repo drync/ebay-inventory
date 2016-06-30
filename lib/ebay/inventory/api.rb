@@ -145,7 +145,7 @@ module Ebay #:nodoc:
         xml = REXML::Document.new(content)
         result = XML::Mapping.load_object_from_xml(xml.root)
 
-        if [Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure].include?(result.ack)
+        if result.failure?
           raise RequestError.new(result.errors, result)
         end
 

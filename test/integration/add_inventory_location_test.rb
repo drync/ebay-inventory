@@ -33,10 +33,11 @@ class AddInventoryLocationTest < Minitest::Test
 
   def test_invalid_request
     VCR.use_cassette("add_inventory_location-invalid") do
-      response = @ebay.add_inventory_location(@location_attributes.merge(:name => ''))
-      assert_equal true, response.failure?
-      assert_equal nil, response.location_id
-      refute_empty response.errors.map(&:short_message).grep(/name/i)
+      error = capture_exception { @ebay.add_inventory_location(@location_attributes.merge(:name => '')) }
+      assert_instance_of Ebay::RequestError, error
+
+      assert_equal nil, error.result.location_id
+      refute_empty error.result.errors.map(&:short_message).grep(/name/i)
     end
   end
 

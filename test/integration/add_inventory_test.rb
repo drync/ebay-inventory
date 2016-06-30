@@ -27,10 +27,11 @@ class AddInventoryTest < Minitest::Test
 
   def test_invalid_request
     VCR.use_cassette("add_inventory-invalid") do
-      response = @ebay.add_inventory(:sku => "123", :locations => [])
-      assert_equal true, response.failure?
-      assert_equal nil, response.sku
-      refute_empty response.errors.map(&:short_message).grep(/Locations/)
+      error = capture_exception { @ebay.add_inventory(:sku => "123", :locations => []) }
+      assert_instance_of Ebay::RequestError, error
+
+      assert_equal nil, error.result.sku
+      refute_empty error.result.errors.map(&:short_message).grep(/Locations/)
     end
   end
 

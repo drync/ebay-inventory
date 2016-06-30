@@ -20,3 +20,14 @@ VCR.configure do |config|
     fail "Attempting to record an API call without an AUTH_TOKEN" unless ENV['AUTH_TOKEN']
   end
 end
+
+class Minitest::Test
+  def capture_exception
+    begin
+      yield
+      nil
+    rescue => e
+      e
+    end
+  end
+end

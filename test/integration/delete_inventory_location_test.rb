@@ -18,9 +18,10 @@ class DeleteInventoryLocationTest < Minitest::Test
 
   def test_invalid_request
     VCR.use_cassette("delete_inventory_location-invalid") do
-      response = @ebay.delete_inventory_location(:location_id => 'zzzz')
-      assert_equal true, response.failure?
-      refute_empty response.errors.map(&:short_message).grep(/Location does not exist/)
+      error = capture_exception { @ebay.delete_inventory_location(:location_id => 'zzzz') }
+      assert_instance_of Ebay::RequestError, error
+
+      refute_empty error.result.errors.map(&:short_message).grep(/Location does not exist/)
     end
   end
 

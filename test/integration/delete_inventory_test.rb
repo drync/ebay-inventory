@@ -21,10 +21,11 @@ class DeleteInventoryTest < Minitest::Test
 
   def test_invalid_request
     VCR.use_cassette("delete_inventory-invalid") do
-      response = @ebay.delete_inventory(:sku => "", :locations => [ Location.new(:location_id => 'test') ])
-      assert_equal true, response.failure?
-      assert_equal nil, response.sku
-      refute_empty response.errors.map(&:short_message).grep(/SKU/)
+      error = capture_exception { @ebay.delete_inventory(:sku => "", :locations => [ Location.new(:location_id => 'test') ]) }
+      assert_instance_of Ebay::RequestError, error
+
+      assert_equal nil, error.result.sku
+      refute_empty error.result.errors.map(&:short_message).grep(/SKU/)
     end
   end
 
